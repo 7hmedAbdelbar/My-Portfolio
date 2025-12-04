@@ -1,0 +1,732 @@
+/* Custom Fonts and Global Reset */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+/* تعريف المتغيرات الأساسية للتصميم */
+:root {
+    --primary-color: #007BFF; 
+    --secondary-color: #28A745; 
+    --dark-color: #1a1a2e; 
+    --light-color: #f4f4f9; 
+    --text-color: #333; 
+    --white-color: #fff;
+    --font-family: 'Cairo', sans-serif;
+}
+
+/* إعادة تعيين التنسيقات الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background: var(--light-color);
+    color: var(--text-color);
+    direction: rtl; 
+    text-align: right;
+    overflow-x: hidden;
+}
+
+/* تعديل الاتجاه عند التغيير للإنجليزية (LTR) */
+body.ltr-mode {
+    direction: ltr;
+    text-align: left;
+}
+
+/* شريط التنقل (Navigation Bar) */
+header {
+    background: var(--white-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* الحفاظ على التثبيت كوضع افتراضي للديسكتوب */
+    top: 0;
+    z-index: 1000;
+    /* إضافة Transition للهيدر ليظهر ويختفي بسلاسة على الموبايل */
+    transition: top 0.3s ease-in-out; 
+    
+}
+
+/* فئة تُضاف بواسطة JS لإخفاء الهيدر على الموبايل */
+header.hidden {
+    top: -100px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* 🌟 أضف ارتفاعاً ثابتاً هنا (تجربة 80px) 🌟 */
+    height: 80px; 
+    
+    /* حافظ على الـ padding الأفقي فقط، وأزل الرأسي */
+    padding: 0 5%; 
+    
+    max-width: 1200px;
+    margin: auto;
+}
+/* تنسيق الرابط الحاوي للوجو */
+/* 🌟 التعديل الأول: تطبيق الارتفاع على الرابط الجديد 🌟 */
+.logo-link {
+    text-decoration: none; 
+    color: inherit; 
+    /* تحديد الارتفاع ليتطابق مع ارتفاع الـ Nav */
+    height: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+/* 1. تحديد ارتفاع الحاوية (اللوجو) */
+/* 1. تحديد ارتفاع الحاوية (nav .logo) */
+nav .logo {
+    /* اجعل الحاوية تأخذ الارتفاع الكامل للـ nav */
+    height: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+/* 2. التحكم في حجم الصورة (nav .logo-image) */
+nav .logo-image {
+    /* 🌟 هذه هي النقطة الحاسمة: حدد ارتفاع الصورة 🌟 */
+    max-height: 150%; /* 80% من ارتفاع الـ nav (الـ 80px) */
+    height: auto;
+    width: auto; /* لضمان أن العرض يتناسب مع الارتفاع الجديد */
+    object-fit: contain;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    
+}
+
+/* إزالة خط التسطير من الروابط في الشريط */
+nav ul li a {
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    font-weight: 400;
+    border-bottom: 2px solid transparent; 
+    transition: color 0.3s ease; /* تأكد من وجود خاصية الانتقال لـ color */
+}
+
+/* ظهور الخط فقط عند المرور بالماوس */
+nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+header nav ul li a.active {
+    color: var(--primary-color); /* اختر اللون الأساسي أو أي لون مميز */
+    font-weight: bold; /* زيادة سمك الخط للتأكيد */
+    /* يمكنك إضافة border-bottom أو أي تأثير آخر هنا */
+}
+
+/* تنسيق زر اللغة (لضمان ظهوره بلون واضح) */
+.lang-btn {
+    display: inline-block; 
+    padding: 8px 15px;
+    border: 1px solid var(--primary-color);
+    background: var(--white-color);
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text-color) !important; /* فرض لون النص */
+    margin-right: 15px; 
+    border-bottom: none !important;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+    
+}
+body.ltr-mode .lang-btn {
+    margin-left: 15px; 
+    margin-right: 0;
+    
+}
+.lang-btn:hover {
+    background: var(--primary-color);
+    color: var(--white-color) !important; 
+    
+}
+
+/* الأقسام العامة */
+.section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* الخط تحت العنوان */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0.5rem auto 0;
+}
+
+/* تنسيق الأقسام ذات الخلفية الداكنة */
+.dark-bg {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.dark-bg .section-title {
+    color: var(--light-color);
+}
+.dark-bg .section-title::after {
+    background: var(--secondary-color);
+}
+
+/* القسم الرئيسي (Hero Section) */
+.hero {
+    /* (ملاحظة: تحتاج لوضع صورة خلفية هنا) */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('') center/cover no-repeat; 
+    height: calc(100vh - 80px); /* يضمن ملء المساحة المتبقية بالضبط */    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    background-image: url('images/3.jpg');
+    background-size: cover; /* لتغطية المساحة بالكامل */
+    background-position: center; /* لتركيز الصورة في المنتصف */
+    background-repeat: no-repeat; /* لعدم تكرار الصورة */
+    scroll-margin-top: 80px;
+    
+    
+}
+
+
+.hero-content {
+    max-width: 800px;
+    
+    
+}
+
+/* تنسيق الصورة الشخصية */
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: none; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    object-position: 70% 30%;
+    margin-bottom: 1rem;
+    
+}
+
+/* أيقونات التواصل الاجتماعي في قسم الهيرو */
+.social-icons {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+
+.social-icons a {
+    color: var(--white-color);
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* الأزرار */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none; /* مهم للروابط التي تعمل كأزرار */
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--white-color);
+    border: 2px solid var(--white-color);
+}
+/* أضف هذا التنسيق في نهاية ملف style.css أو ضمن قسم الهيرو */
+.spacer {
+    /* 🌟 هذه القيمة تحدد المسافة بين النص والأزرار 🌟 */
+    height: 20px; /* جرب 35px أو 40px للمسافة المطلوبة */
+    width: 100%;
+}
+/* قسم من أنا (About) - الكارت التفصيلي */
+.details-card {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    border-right: 5px solid var(--primary-color); 
+}
+body.ltr-mode .details-card {
+    border-right: none;
+    border-left: 5px solid var(--primary-color); 
+}
+
+.details-card ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+body.ltr-mode .details-card ul {
+    padding-left: 0;
+}
+
+/* شبكة المهارات والمشاريع */
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 40px; /* نقلل المسافة العلوية لتقريبها من النص الذي يسبقها */
+}
+
+/* تنسيق المشاريع */
+.project-card {
+    background: var(--white-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأكد من وجود هذه الخاصية */
+}
+
+.project-card:hover {
+    /* تطبيق تأثير الرفع للأعلى (مثل كروت الشهادات) */
+    transform: translateY(-5px); 
+    /* تغيير الظل لجعلها تبدو مرفوعة أكثر */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* شبكة الشهادات (Certifications Grid) */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* تنسيق بطاقة الشهادة */
+.cert-card {
+    background: rgba(255, 255, 255, 0.1); /* خلفية شفافة في القسم الداكن */
+    color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 4px solid var(--secondary-color);
+    transition: transform 0.3s;
+}
+
+/* إذا كان القسم فاتحاً */
+.section:not(.dark-bg) .cert-card {
+    background: var(--white-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.cert-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.cert-card p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.cert-card a {
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.cert-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* **تنسيق نموذج التواصل** */
+#contact-form {
+    max-width: 600px;
+    margin: 2rem auto 1rem auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* بما أن قسم التواصل أصبح الآن فاتحاً */
+#contact-form input, #contact-form textarea {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background: #fcfcfc; /* خلفية فاتحة جداً */
+    color: var(--text-color);
+    border: 1px solid #ddd;
+}
+
+/* تنسيق نص الـ placeholder */
+#contact-form input::placeholder, #contact-form textarea::placeholder {
+    color: #999;
+}
+
+/* تنسيق زر الإرسال داخل النموذج */
+#contact-form .primary-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    width: 100%; 
+}
+
+/* أيقونات التواصل الاجتماعي في قسم التواصل (الآن في خلفية فاتحة) */
+.social-icons.contact-social a {
+    color: var(--text-color); /* لون داكن في الخلفية الفاتحة */
+}
+
+.social-icons.contact-social {
+    margin-top: 3rem; 
+    font-size: 2.2rem; 
+    text-align: center;
+}
+
+.social-icons.contact-social a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Scroll Animation CSS */
+.initial-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* التذييل (Footer) */
+footer {
+    background: var(--dark-color);
+    color: #999;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+/* تنسيق النافذة المنبثقة (Modal) */
+.modal-content {
+    /* هذه الخصائص هي المفتاح لملء الشاشة */
+    width: auto; /* يجعل العرض يتكيف مع الارتفاع (في البداية) */
+    max-width: 90%; /* يضمن أن الصورة لا تتجاوز 90% من عرض الشاشة */
+    max-height: 90vh; /* يضمن أن الصورة لا تتجاوز 90% من ارتفاع viewport (الشاشة المرئية) */
+    
+    /* تنسيقات أخرى سابقة (للتوسيط والخلفية) */
+    margin: auto;
+    display: block;
+    border-radius: 8px; /* لتنسيق أفضل */
+}
+
+/* تنسيق الـ Modal نفسها (الخلفية) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px; /* لترك مساحة في الأعلى */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* مهم لتمكين التمرير إذا تجاوزت الصورة حجم الشاشة */
+    background-color: rgba(0, 0, 0, 0.9); /* خلفية سوداء شفافة */
+    
+}
+
+/* تأثير التكبير */
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* زر الإغلاق */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 35px; /* يمين الشاشة (في وضع RTL) */
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* ======================================= */
+/* 📱 التنسيق المتجاوب (MEDIA QUERIES) */
+/* ======================================= */
+
+/* الشاشات المتوسطة (Tablets - أقل من 992px) */
+@media (max-width: 991px) {
+    
+    .section {
+        padding: 4rem 4%; 
+    }
+
+    nav {
+        padding: 0.75rem 4%; 
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* الشاشات الصغيرة (Mobile Phones - أقل من 768px) */
+@media (max-width: 767px) {
+
+    
+    
+    /* جعل الهيدر قابلاً للتحريك والتثبيت في الأعلى */
+    header {
+        position: fixed; /* تثبيته للسماح بتحريكه بواسطة JS */
+        top: 0;
+        width: 100%;
+        /* Transition موجودة في التنسيقات العامة للهيدر */
+    }
+    
+    /* فئة يتم تطبيقها بواسطة JS لإخفاء الهيدر */
+    header.hidden {
+        top: -100px; /* قم برفعه إلى الأعلى خارج الشاشة */
+    }
+    
+    /* تنسيق زر إظهار الهيدر العائم (الجديد) */
+    .mobile-menu-toggle {
+        position: fixed;
+        right: 15px; /* يمين الشاشة */
+        bottom: 15px; /* أسفل الشاشة */
+        z-index: 1001; /* أعلى من الهيدر */
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        display: flex; /* لترتيب الأيقونة في المنتصف */
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: opacity 0.3s, visibility 0.3s;
+        
+        /* إخفاء الزر افتراضياً */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* إظهار الزر عندما يكون الهيدر مخفياً */
+    header.hidden + .mobile-menu-toggle {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    
+    /* شريط التنقل */
+   /* شريط التنقل */
+nav {
+    /* 💥 مهم جداً: تأكد من أن الـ nav هو الأصل المطلق (لأننا سنجعل القائمة مطلقة داخله) 💥 */
+    position: relative; 
+    flex-direction: row; /* نرجعها لسكر واحد (اللوجو والزر) */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%; /* نلغي الـ padding الرأسي لتقليل ارتفاع الهيدر */
+    height: 60px; /* نحدد ارتفاع ثابت وصغير للهيدر في الموبايل */
+}
+
+nav ul {
+    /* 💥 نجعل القائمة تطفو فوق المحتوى 💥 */
+    position: absolute; 
+    
+    /* 💥 الموقع: أسفل الهيدر مباشرة 💥 */
+    top: 60px; /* بعد ارتفاع الـ nav */
+    
+    /* 💥 الموقع: من جهة اليمين (لغة عربية) 💥 */
+    right: 0; 
+    
+    width: 250px; /* عرض القائمة المنسدلة */
+    background: var(--white-color); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
+    padding: 10px 0;
+    
+    /* 💥 الإخفاء الافتراضي 💥 */
+    display: none; 
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 900; /* تحت الهيدر مباشرة */
+}
+
+/* تنسيق الإظهار */
+nav ul.open {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تعديل الاتجاه في وضع LTR */
+body.ltr-mode nav ul {
+    right: auto;
+    left: 0; 
+    border-radius: 0 0 8px 8px;
+}
+/* تعديل تنسيق الروابط داخل القائمة */
+nav ul li {
+    width: 100%;
+}
+nav ul li a {
+    display: block; 
+    padding: 10px 20px; /* padding مريح داخل القائمة المنسدلة */
+    font-size: 1rem;
+    border-bottom: none !important; /* إزالة الخطوط السفلية */
+}
+
+/* تعديل تنسيق زر اللغة داخل القائمة */
+.lang-btn {
+    /* نضمن أن زر اللغة يأخذ تنسيق رابط داخلي */
+    display: block;
+    width: 90%; 
+    margin: 10px auto; 
+    padding: 8px;
+}
+
+
+    /* القسم الرئيسي */
+    .hero {
+        min-height: 60vh;
+        padding: 2rem 5%;
+        /* إضافة مسافة علوية لتجنب اختباء المحتوى تحت الهيدر */
+        padding-top: 150px; 
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    /* الأزرار في الهيرو تتكدس عمودياً */
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-buttons .btn {
+        width: 80%;
+        margin: 5px 0;
+    }
+
+    /* شبكة المهارات والمشاريع والشهادات تتكدس عمودياً */
+    .skills-grid, .projects-grid, .certs-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* أيقونات التواصل في قسم التواصل */
+    .social-icons.contact-social {
+        font-size: 1.8rem;
+        margin-top: 2rem;
+    }
+    
+    .social-icons.contact-social a {
+        margin: 0 10px;
+    }
+}
+/* ----------------------------------------------------- */
+/* تنسيق معرض الصور (Modal Gallery) */
+/* ----------------------------------------------------- */
+
+
+/* تنسيق أزرار التنقل */
+.prev, .next {
+    display: none;
+    cursor: pointer;
+    position: absolute; /* 🌟 مهم جداً: لتحديد موقعه داخل الـ Modal 🌟 */
+    top: 50%; /* ضع الزر في منتصف الصورة عمودياً */
+    width: auto;
+    padding: 16px;
+    margin-top: -50px; /* لضبط المركز عمودياً */
+    color: white; /* لون النص (الرمز) */
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* خلفية خفيفة لتكون مرئية */
+}
+
+/* وضع زر السابق وزر التالي بناءً على اتجاه RTL */
+.prev {
+    /* في وضع RTL (اللغة العربية)، يكون السابق هو الزر الأيمن */
+    right: 0; 
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    /* وفي وضع RTL، يكون التالي هو الزر الأيسر */
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* تأثير التمرير (Hover Effect) */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}

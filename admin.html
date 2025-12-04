@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة تحكم المشرف - JSON Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيقات خاصة بصفحة الأدمن */
+        .admin-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            direction: rtl;
+            text-align: right;
+        }
+        .admin-form input, .admin-form textarea, .admin-form button, .admin-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-family);
+        }
+        .output-box {
+            background: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin-top: 20px;
+            direction: ltr; /* لعرض كود JSON بشكل صحيح */
+            text-align: left;
+        }
+        .admin-warning {
+            color: var(--error-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <h2>🔒 لوحة تحكم المشرف (Admin JSON Generator)</h2>
+    <p class="admin-warning">مهم: لا يوجد قاعدة بيانات. هذا النموذج يولد كود JSON، الذي **يجب عليك نسخه ولصقه يدويًا** في ملف `data.json` على GitHub.</p>
+
+    <div id="auth-panel">
+        <p>أدخل كلمة المرور للدخول:</p>
+        <input type="password" id="admin-password" placeholder="كلمة المرور">
+        <button onclick="checkPassword()" class="btn primary-btn">دخول</button>
+        <p id="auth-message" style="color: var(--error-color);"></p>
+    </div>
+
+    <div id="project-form-panel" style="display: none;">
+        
+        <h2>➕ إضافة مشروع اختبار جديد</h2>
+        <form id="project-form" class="admin-form">
+            <input type="text" id="p-id" placeholder="ID فريد للمشروع (مثل project3)" required>
+            <input type="text" id="p-img" placeholder="مسار الصورة (مثل images/project3.png)" required>
+            <input type="text" id="p-link" placeholder="رابط المشروع على GitHub" required>
+            <input type="text" id="p-tags" placeholder="الوسوم مفصولة بفاصلة (,): #Tag1, #Tag2">
+            
+            <input type="text" id="p-ar-title" placeholder="العنوان (عربي)" required>
+            <textarea id="p-ar-desc" placeholder="الوصف (عربي)" required></textarea>
+            
+            <input type="text" id="p-en-title" placeholder="العنوان (إنجليزي)" required>
+            <textarea id="p-en-desc" placeholder="الوصف (إنجليزي)" required></textarea>
+            
+            <button type="submit" class="btn secondary-btn">توليد كود JSON للمشروع</button>
+        </form>
+
+        <h3>كود JSON لتحديث قائمة `projects_list`:</h3>
+        <div id="json-output" class="output-box"></div>
+        <button onclick="copyJson()" class="btn primary-btn" style="margin-top: 10px;">نسخ الكود</button>
+
+        <hr style="margin: 40px 0;">
+
+        <h2>✍️ تحديث النصوص العامة (Translation Updater)</h2>
+        <form id="text-update-form" class="admin-form">
+            <p>لتعديل أي نص في الصفحة (العنوان، الوصف، إلخ).</p>
+            <input type="text" id="t-key" placeholder="مفتاح النص (data-translate='...') (مثال: about_text)" required>
+            <select id="t-lang" required style="margin-bottom: 15px;">
+                <option value="">اختر اللغة</option>
+                <option value="ar">العربية (ar)</option>
+                <option value="en">الإنجليزية (en)</option>
+            </select>
+            <textarea id="t-new-value" placeholder="النص الجديد" rows="4" required></textarea>
+            <button type="submit" class="btn secondary-btn">توليد كود تحديث الترجمة</button>
+        </form>
+
+        <h3>كود تحديث `data.json` للترجمة (الصقه داخل قسم AR أو EN):</h3>
+        <div id="json-output-text" class="output-box"></div>
+        <button onclick="copyJsonText()" class="btn primary-btn" style="margin-top: 10px;">نسخ كود الترجمة</button>
+
+        <hr style="margin: 40px 0;">
+
+        <h2>🖼️ إدارة الإعدادات العامة (General Settings)</h2>
+        <form id="general-settings-form" class="admin-form">
+            <p>لتحديث الروابط الثابتة والصور الرئيسية (تذكر وضع الصور في مجلد `images/`).</p>
+            
+            <input type="text" id="gs-profile-img" placeholder="مسار الصورة الشخصية (images/my_photo.jpg)">
+            <input type="text" id="gs-cv-link" placeholder="رابط تحميل السيرة الذاتية (CV link)">
+            
+            <h4>روابط التواصل الاجتماعي (Social Links)</h4>
+            <input type="text" id="gs-linkedin" placeholder="رابط LinkedIn (https://...)">
+            <input type="text" id="gs-github" placeholder="رابط GitHub (https://...)">
+            <input type="email" id="gs-email" placeholder="البريد الإلكتروني (mailto:your.email@...)">
+            
+            <button type="submit" class="btn secondary-btn">توليد كود تحديث الإعدادات العامة</button>
+        </form>
+
+        <h3>كود JSON لتحديث قسم `global_settings`:</h3>
+        <div id="json-output-settings" class="output-box"></div>
+        <button onclick="copyJsonSettings()" class="btn primary-btn" style="margin-top: 10px;">نسخ كود الإعدادات</button>
+
+    </div>
+</div>
+
+<script>
+    // ** كلمة المرور **: قم بتغيير هذه القيمة إلى كلمة مرور قوية!
+    const ADMIN_PASS = '123456'; 
+
+    // وظيفة التحقق من كلمة المرور
+    function checkPassword() {
+        const input = document.getElementById('admin-password').value;
+        const authMessage = document.getElementById('auth-message');
+        if (input === ADMIN_PASS) {
+            document.getElementById('auth-panel').style.display = 'none';
+            document.getElementById('project-form-panel').style.display = 'block';
+        } else {
+            authMessage.textContent = 'كلمة المرور خاطئة.';
+        }
+    }
+
+    // A) منطق توليد كود المشاريع
+    document.getElementById('project-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const id = document.getElementById('p-id').value.trim();
+        const tags = document.getElementById('p-tags').value.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
+        const tagsString = tags.map(t => `"${t}"`).join(', ');
+
+        const newProject = {
+            id: id,
+            img: document.getElementById('p-img').value.trim(),
+            link: document.getElementById('p-link').value.trim(),
+            tags: tags,
+            // تأمين النصوص من الاقتباسات المزدوجة لتجنب كسر JSON
+            ar_title: document.getElementById('p-ar-title').value.trim().replace(/"/g, '\\"'),
+            ar_desc: document.getElementById('p-ar-desc').value.trim().replace(/"/g, '\\"'),
+            en_title: document.getElementById('p-en-title').value.trim().replace(/"/g, '\\"'),
+            en_desc: document.getElementById('p-en-desc').value.trim().replace(/"/g, '\\"')
+        };
+
+        const jsonOutput = 
+`{
+  "id": "${newProject.id}",
+  "img": "${newProject.img}",
+  "link": "${newProject.link}",
+  "tags": [${tagsString}],
+  "ar_title": "${newProject.ar_title}",
+  "ar_desc": "${newProject.ar_desc}",
+  "en_title": "${newProject.en_title}",
+  "en_desc": "${newProject.en_desc}"
+}`;
+        
+        document.getElementById('json-output').textContent = jsonOutput.trim();
+        alert('تم توليد كود المشروع! الصقه بين الأقواس المربعة [ ] داخل مصفوفة "projects_list" في ملف data.json.');
+    });
+    
+    // وظيفة نسخ كود المشروع
+    function copyJson() {
+        const output = document.getElementById('json-output');
+        navigator.clipboard.writeText(output.textContent.trim()).then(() => {
+            alert('تم نسخ كود المشروع بنجاح!');
+        });
+    }
+
+    // B) منطق توليد كود تحديث النصوص العامة (الترجمة)
+    document.getElementById('text-update-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const key = document.getElementById('t-key').value.trim();
+        const lang = document.getElementById('t-lang').value;
+        const newValue = document.getElementById('t-new-value').value.trim().replace(/"/g, '\\"'); 
+
+        const jsonOutput = 
+`"${key}": "${newValue}"`;
+        
+        document.getElementById('json-output-text').textContent = jsonOutput.trim();
+        
+        alert(`تم توليد الكود للغة (${lang}) والمفتاح (${key}). انسخه والصقه يدويًا في القسم الخاص بـ ("${lang}") في ملف data.json. استبدل القيمة القديمة بنفس المفتاح.`);
+    });
+    
+    // وظيفة نسخ كود الترجمة
+    function copyJsonText() {
+        const output = document.getElementById('json-output-text');
+        navigator.clipboard.writeText(output.textContent.trim()).then(() => {
+            alert('تم نسخ كود الترجمة بنجاح!');
+        });
+    }
+
+    // C) منطق توليد كود الإعدادات العامة
+    document.getElementById('general-settings-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const settings = {
+            profile_img_path: document.getElementById('gs-profile-img').value.trim(),
+            cv_link: document.getElementById('gs-cv-link').value.trim(),
+            linkedin_link: document.getElementById('gs-linkedin').value.trim(),
+            github_link: document.getElementById('gs-github').value.trim(),
+            email_link: document.getElementById('gs-email').value.trim()
+        };
+
+        const jsonOutput = 
+`"global_settings": {
+  "profile_img_path": "${settings.profile_img_path}",
+  "cv_link": "${settings.cv_link}",
+  "linkedin_link": "${settings.linkedin_link}",
+  "github_link": "${settings.github_link}",
+  "email_link": "${settings.email_link}"
+}`;
+        
+        document.getElementById('json-output-settings').textContent = jsonOutput.trim();
+        
+        alert(`تم توليد كود الإعدادات. قم بنسخه ولصقه يدويًا لاستبدال القسم بالكامل في ملف data.json.`);
+    });
+
+    // وظيفة نسخ كود الإعدادات
+    function copyJsonSettings() {
+        const output = document.getElementById('json-output-settings');
+        navigator.clipboard.writeText(output.textContent.trim()).then(() => {
+            alert('تم نسخ كود الإعدادات بنجاح!');
+        });
+    }
+</script>
+</body>
+</html>

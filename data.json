@@ -1,0 +1,192 @@
+{
+    "global_settings": {
+        "profile_img_path": "images/1.jpg",
+        "cv_link": "documents/your_cv.pdf",
+        "linkedin_link": "https://www.linkedin.com/in/7hmed-abdelbar",
+        "github_link": "https://github.com/7hmedAbdelbar",
+        "email_link": "mailto:7hmedabdelbar@gmail.com",
+        "phone_number": "+201091574429" 
+    },
+    
+    "ar": {
+        "title": "Ahmed AbdElbar Portfolio - Software Test Engineer",
+        "nav_about": "من أنا",
+        "nav_skills": "مهاراتي",
+        "nav_projects": "مشاريع الاختبار",
+        "nav_certs": "الشهادات",
+        "nav_contact": "تواصل معي",
+        
+        "hero_greeting":"أهلاً بيك، أنا أحمد عبدالبر",
+        "hero_subtitle": "أنا مؤمن إن جودة المنتج مش صدفة… هى نتيجة اختبار دقيق وشغل منظم.",
+        
+        "cta_projects": "شاهد مشاريعي",
+        "cta_cv": "تحميل السيرة الذاتية (CV)",
+        
+        "about_title": "🕵️‍♂️ من أنا (My QA Philosophy)",
+        "about_text": " جونيور Software Tester شغوف بكشف المشاكل قبل ما توصل للمستخدم، مع خبرة عملية في Functional Testing، API Testing، وRegression Testing باستخدام أدوات مثل Postman وJIRA وSQL. ملم بمبادئ SDLC وSTLC وAgile methodologies، وقادر على كتابة test cases، test plans، وتحليل النتائج لاكتشاف العيوب بدقة. هدفي دائمًا ضمان منتجات مستقرة وموثوقة، وتقليل المخاطر قبل الإطلاق، مع التركيز على تحسين تجربة المستخدم وجودة الأداء العام للنظام.",
+        "specialties_title": "التخصصات الأساسية:",
+        "specialty_1": "✅ Functional Testing: اختبار شامل للميزات لضمان عمل كل وظيفة كما هو متوقع على الويب والموبايل.",
+        "specialty_2": "✅ API Testing: التحقق من صحة واجهات البرمجة والتأكد من استقرار البيانات والتكامل بين الأنظمة.",
+        "specialty_3": "✅ Bug Tracking & Reporting: مهارة عالية في استخدام JIRA وTestRail لإدارة الأخطاء ومتابعتها بدقة.",
+        "specialty_4": "✅ Cross-Platform QA: اختبار التطبيقات على مختلف المتصفحات وأجهزة الموبايل لضمان تجربة مستخدم سلسة.",
+        "specialty_5": "✅ Usability Testing: تقييم تجربة المستخدم وسهولة التعامل مع التطبيقات.",
+        "specialty_6": "✅ Continuous Learning & Adaptability: القدرة على التعلم السريع لأدوات جديدة والتكيف مع متطلبات المشاريع المتغيرة.",
+
+
+        "skill_manual_title": "الاختبار وضمان الجودة",
+        "skill_manual_desc": "الاختبار الوظيفي (Functional Testing),اختبار الانحدار (Regression Testing),الاختبار الاستكشافي (Exploratory Testing),اختبار واجهات البرمجة ,API(Postman),أتمتة الاختبار (Selenium )",
+        "skill_automation_title": "البرمجة والسكربتات",
+        "skill_automation_desc": "أساسيات Java / Python,استعلامات SQL لاختبار قواعد البيانات,HTML وCSS وJavaScript (دعم لاختبار واجهة المستخدم)",
+        "skill_tools_title": "إدارة الأدوات والعمليات",
+        "skill_tools_desc": "Jira وTrello لإدارة المشكلات,Git وGitHub للتحكم بالإصدارات, المطور في المتصفح (Browser Developer Tools),TestRail / Zephyr لإدارة الاختبارات",
+        
+        "projects_title": "📂 مشاريع الاختبار (Testing Case Studies)",
+        "projects_subtitle": "هذه أمثلة من مشاريع قمت فيها بتطبيق استراتيجيات الاختبار المختلفة وأتمتة العمليات لضمان أعلى مستوى من الجودة.",
+        "project_link_text": "عرض رابط المشروع/التقرير",
+        
+        "certs_title": "🏅 الشهادات (My Credentials)",
+        "certs_subtitle": "أهم الشهادات المهنية التي حصلت عليها في مجال ضمان الجودة والتي تؤكد معرفتي المتعمقة بالصناعة.",
+        "cert_link_text": "عرض الشهادة",
+
+        "contact_title": "📞 تواصل معي (Let's Connect)",
+        "contact_text": "متحمس لمناقشة فرص العمل، أو استراتيجيات ضمان الجودة المتقدمة، أو مجرد التواصل المهني.",
+        "form_name": "الاسم",
+        "form_email": "البريد الإلكتروني",
+        "form_message": "رسالتك...",
+        "form_submit": "إرسال الرسالة",
+        
+        "footer_text": "| Ahmed AbdElbar Portfolio - Quality Assurance with Precision."
+        
+    },
+    
+    "en": {
+        "title": "Ahmed AbdElbar Portfolio - Software Test Engineer",
+        "nav_about": "About Me",
+        "nav_skills": "Skills",
+        "nav_projects": "Projects",
+        "nav_certs": "Certifications",
+        "nav_contact": "Contact",
+        
+        "hero_greeting": "Hello! I'm Ahmed AbdElbar",
+        "hero_subtitle": "I believe product quality isn’t luck—it’s the result of precise, structured testing.",
+        "cta_projects": "View My Projects",
+        "cta_cv": "Download CV",
+        
+        "about_title": "🕵️‍♂️ About Me (My QA Philosophy)",
+        "about_text": "Junior Software Tester passionate about identifying issues before they impact users, with hands-on experience in Functional, API, and Regression Testing using tools like Postman, JIRA, and SQL. Proficient in SDLC, STLC, and Agile methodologies, capable of creating test cases, test plans, and analyzing results to uncover defects accurately. Always aiming to deliver stable, reliable software, minimizing risks before release while enhancing user experience and overall system quality.",
+        "specialties_title": "Core Specialties:",
+        "specialty_1": "✅ Functional Testing: Conducting thorough testing of features to ensure every function works as expected on web and mobile applications.",
+        "specialty_2": "✅ API Testing: Verifying API functionality, data integrity, and system integration. ",
+        "specialty_3": "✅ Bug Tracking & Reporting: Skilled in using JIRA and TestRail to accurately log, track, and manage defects.",
+        "specialty_4": "✅ Cross-Platform QA: Testing applications across multiple browsers and mobile devices to ensure seamless user experience.",
+        "specialty_5": "✅ Usability Testing: Evaluating user experience and ease of interaction with applications.",
+        "specialty_6": "✅ Continuous Learning & Adaptability: Quickly learning new tools and adapting to evolving project requirements.",
+
+
+        "skill_manual_title": "Testing & QA",
+        "skill_manual_desc": "Functional Testing,Regression Testing,Exploratory Testing,API Testing (Postman),Automation Testing (Selenium )",
+        "skill_automation_title": "Programming & Scripting",
+        "skill_automation_desc": "Java / Python basics,SQL queries for database testing,HTML, CSS, JavaScript (for UI testing support).",
+        "skill_tools_title": "Tools and Process Management",
+        "skill_tools_desc": "Jira, Trello (Issue tracking),Git & GitHub (Version control),Browser Developer Tools,TestRail / Zephyr (Test management).",
+        
+        "projects_title": "📂 Testing Case Studies",
+        "projects_subtitle": "These are examples of projects where I applied various testing strategies and automated processes to ensure the highest level of quality.",
+        "project_link_text": "View Project/Report Link",
+
+        "certs_title": "🏅 Certifications (My Credentials)",
+        "certs_subtitle": "The most important professional certifications I have obtained in the field of Quality Assurance, confirming my in-depth knowledge of the industry.",
+        "cert_link_text": "View Certificate",
+        
+        "contact_title": "📞 Contact Me (Let's Connect)",
+        "contact_text": "Excited to discuss job opportunities, advanced QA strategies, or just connect professionally.",
+        "form_name": "Name",
+        "form_email": "Email",
+        "form_message": "Your Message...",
+        "form_submit": "Send Message",
+        
+        "footer_text": "| Ahmed AbdElbar Portfolio - Quality Assurance with Precision."
+    },
+
+    "projects_list": [
+        {
+            "thumbnail": "images/g0.jpg", 
+            "gallery_images": [ 
+                
+                                 "images/g3.png",
+                                 "images/g1.png",
+                                 "images/g2.png",
+                                 "images/g4.png",
+                                 "images/g5.png",
+                                 "images/g6.png",
+                                 "images/g7.png"
+             ],
+            "ar_title": " مشروع اختبار تطبيق Genie – تجارة إلكترونية",
+            "en_title": "Genie App – E-Commerce Testing Project",
+            "ar_desc": "قمت باختبار تطبيق تجارة إلكترونية يشمل تسجيل الدخول، إدارة السلة، وعمليات الدفع. نفّذت اختبارات Functional وRegression وAPI واكتشفت مجموعة من الأخطاء الحرجة التى أثّرت على تجربة المستخدم، مما أدى لتحسين الأداء واستقرار النسخة النهائية قبل الإطلاق.",
+            "en_desc": " Tested a complete application covering login, cart management, and secure checkout. Performed Functional, Regression, and API testing, identified several critical issues affecting user experience, and contributed to enhancing performance and overall stability .",
+            "tags": [],
+            "link": "https://docs.google.com/spreadsheets/d/17L_wayrLPwUDheaHQ8eq6KH298SgKSwG/edit?usp=sharing&ouid=116373238177352560270&rtpof=true&sd=true"
+        },
+        {
+            "thumbnail": "images/o0.png", 
+            "gallery_images": [ 
+                                "images/o0.png", 
+                                "images/o1.png",
+                                "images/o3.png",
+                                "images/o2.png"
+         ],
+            "ar_title": "Ostool Website – منصة إدارة السيارات",
+            "en_title": "Ostool Website – Car Trading Platform Testing",
+            "ar_desc": "قمت باختبار منصة ويب خاصة بتجارة السيارات تشمل إضافة السيارات، إدارة المعروضات، وعمليات البحث والتصفية. نفّذت اختبارات Functional  وتأكدت من صحة البيانات وسلاسة تجربة المستخدم، مع اكتشاف أخطاء حرجة أثّرت على الأداء قبل الإصدار النهائى.",
+            "en_desc": "Tested a web-based car trading platform covering car listing, inventory management, and search/filter features. Performed Functional and Regression testing, validated data accuracy and user flow, and identified critical issues that improved performance and stability before release.",
+            "tags": [],
+            "link": "https://docs.google.com/spreadsheets/d/14WGPnPBAeZRRUh9l8rEoUGhzW4phs74-_Y-GFXb1kxY/edit?usp=sharing"
+        },
+
+        {
+            "thumbnail": "images/n0.png", 
+            "gallery_images": [ 
+                                "images/n0.png", 
+                                "images/n1.png",
+                                "images/n2.png",
+                                "images/n3.png",
+                                "images/n4.png"
+         ],
+            "ar_title": "Laptop Booking API Testing with Postman & Newman",
+            "en_title": "Laptop Booking API Testing with Postman & Newman",
+            "ar_desc": "  قمت باختبار واجهة API لنظام حجز اللابتوبات باستخدام Postman و Newman، أنشأت Collection كاملة لاختبارات Functional وRegression، وتأكدت من عمل جميع العمليات مثل تسجيل المستخدمين، إدارة الحجوزات، وتحديث بيانات المستخدم بأمان قبل الإطلاق. ",
+            "en_desc": "Tested a RESTful API for a laptop booking system using Postman and Newman. Created a complete collection for Functional and Regression testing, verifying operations such as user authentication, booking management, and secure user updates before release.",
+            "tags": [],
+            "link": "https://github.com/7hmedAbdelbar/API-Project.git"
+        }
+    ],
+    
+    "certs_list": [
+        {
+            "icon": "fas fa-certificate",
+            "ar_title": "شهادة ISTQB (Foundation Level)",
+            "en_title": "ISTQB Certified Tester (Foundation Level)",
+            "ar_desc": "تغطية شاملة لمبادئ الاختبار الأساسية، دورة حياة الاختبار، وتصميم حالات الاختبار،      مما يوفر أساسًا قويًا لممارسات اختبار البرمجيات. ",
+            "en_desc": "Comprehensive coverage of fundamental testing principles, the testing lifecycle, and test case design, providing a solid foundation in software testing practices.",
+            "link": "https://drive.google.com/file/d/1ES-txAUFGqsbf1_aqbh05HorJsQSpMrW/view?usp=sharing"
+        },
+        {
+            "icon": "fas fa-certificate",
+            "ar_title": "شهادة تدريب داخلي في اختبار البرمجيات – AIM Tech",
+            "en_title": "Internship Certificate in Software Testing – AIM Tech",
+            "ar_desc": "أتممت تدريبًا داخليًا مع AIM Tech وحصلت على شهادة في اختبار البرمجيات، واكتسبت خبرة عملية في اختبارات Functional وAPI ضمن بيئة عمل حقيقية.",
+            "en_desc": "Completed an internship with AIM Tech, earning a Software Testing certificate and gaining hands-on experience in Functional and API Testing in a real work environment.",
+            "link": "https://drive.google.com/file/d/15R0F4NgOE7CQTfHVwYITk-d7mTV7YARM/view?usp=sharing"
+        }
+        ,
+         {
+            "icon": "fas fa-certificate",
+            "ar_title": "دبلومة اختبار البرمجيات (120 ساعة) – Instant",
+            "en_title": "Software Testing Diploma (120 hours) – Instant",
+            "ar_desc": "  دبلومة متكاملة من Instant تشمل اختبار البرمجيات اليدوي، الأتمتة، وأداء الأنظمة، مع تطبيق عملي على مشاريع مختلفة لتعزيز المهارات العملية.",
+            "en_desc": "A comprehensive diploma from Instant covering Manual, Automation, and Performance Testing, with hands-on projects to strengthen practical skills.",
+            "link": "https://drive.google.com/file/d/1ADAzqm9KmcRbOergZn3l1rQJFObN91wg/view?usp=sharing"
+        }
+    ]
+}

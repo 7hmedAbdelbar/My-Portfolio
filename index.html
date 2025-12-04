@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">محفظة أعمال [اسمك] - مهندس اختبار برمجيات</title>
+    <link rel="icon" type="image/png" href="images/logo21.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hero" class="logo-link">
+                <div class="logo">
+                    <img src="images/logo21.png" alt="QA Logo" class="logo-image">
+                </div>
+            </a>
+            <i class="fas fa-bars menu-toggle" id="menu-toggle"></i>
+            <ul>
+                <li><a href="#about" data-translate="nav_about">من أنا</a></li>
+                <li><a href="#skills" data-translate="nav_skills">مهاراتي</a></li>
+                <li><a href="#projects" data-translate="nav_projects">مشاريع الاختبار</a></li>
+                <li><a href="#certifications" data-translate="nav_certs">الشهادات</a></li>
+                <li><a href="#contact" data-translate="nav_contact">تواصل معي</a></li>
+                <li><button id="lang-toggle" class="btn secondary-btn lang-btn" data-lang="en">English</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    <section id="hero" class="hero initial-hidden">
+        <div class="hero-content">
+            <a href="#" id="profile-img-link" class="profile-img-container">
+                <img id="profile-img" src="images/default_profile.png" alt="صورة الملف الشخصي" class="profile-picture">
+            </a>
+            <h1 data-translate="hero_greeting">أهلاً بك! أنا **[اسمك]**</h1>
+
+            <p data-translate="hero_subtitle">مهندس اختبار برمجيات (Software Tester)...</p>
+            <div class="spacer"></div>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary-btn" data-translate="cta_projects">شاهد مشاريعي</a>
+                <a id="cv-link" href="#" target="_blank" class="btn secondary-btn" data-translate="cta_cv">تحميل السيرة الذاتية (CV)</a>
+            </div>
+            
+            <div class="social-icons">
+                <a id="linkedin-icon" href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a id="github-icon" href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a id="email-icon" href="#" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a id="phone-icon" href="#" title="Phone Number"><i class="fas fa-phone"></i></a> </div>
+        </div>
+    </section>
+    <section id="about" class="section initial-hidden">
+        <h2 class="section-title" data-translate="about_title">🕵️‍♂️ من أنا (My QA Philosophy)</h2>
+        <p data-translate="about_text">أمتلك خبرة في دورة حياة تطوير البرمجيات (SDLC)...</p>
+        <div class="details-card">
+            <h3 data-translate="specialties_title">التخصصات الأساسية:</h3>
+            <ul>
+                <li data-translate="specialty_1">✅ Functional Testing</li>
+                <li data-translate="specialty_2">✅ API Testing</li>
+                <li data-translate="specialty_3">✅ Bug Tracking & Reporting</li>
+                <li data-translate="specialty_4">✅ Cross-Platform QA</li>
+        
+                <li data-translate="specialty_5">✅ Usability Testing</li>
+                <li data-translate="specialty_6">✅ Continuous Learning & Adaptability</li>
+            </ul>
+        </div>
+    </section>
+    <section id="skills" class="section dark-bg initial-hidden">
+        <h2 class="section-title" data-translate="skills_title">🛠️ مهاراتي التقنية (My Tech Stack)</h2>
+        <div class="skills-grid">
+            <div class="skill-item initial-hidden">
+                <h3 data-translate="skill_manual_title">الاختبار اليدوي (Manual Testing)</h3>
+                <p data-translate="skill_manual_desc">إعداد خطط الاختبار، تحليل المتطلبات، كتابة وتنفيذ Test Cases، Bug Tracking (Jira/Asana).</p>
+            </div>
+            <div class="skill-item initial-hidden">
+                <h3 data-translate="skill_automation_title">أتمتة الاختبار (Automation)</h3>
+                <p data-translate="skill_automation_desc">Selenium WebDriver, Cypress, Postman (API Testing), [لغة البرمجة التي تستخدمها مثل Python/Java].</p>
+            </div>
+            <div class="skill-item initial-hidden">
+                <h3 data-translate="skill_tools_title">إدارة الأدوات والعمليات</h3>
+                <p data-translate="skill_tools_desc">Git/GitHub, CI/CD Pipelines, SQL (Database Testing), Agile/Scrum.</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section initial-hidden">
+        <h2 class="section-title" data-translate="projects_title">📂 مشاريع الاختبار (Testing Case Studies)</h2>
+        <p class="subtitle" data-translate="projects_subtitle">هذه أمثلة من مشاريع قمت فيها بتطبيق استراتيجيات الاختبار المختلفة.</p>
+        
+        <div class="projects-grid">
+        </div>
+    </section>
+    <section id="certifications" class="section dark-bg initial-hidden">
+        <h2 class="section-title" data-translate="certs_title">🏅 الشهادات (My Credentials)</h2>
+        <p class="subtitle" data-translate="certs_subtitle">أهم الشهادات المهنية التي حصلت عليها في مجال ضمان الجودة.</p>
+        
+        <div class="certs-grid">
+        </div>
+    </section>
+    <section id="contact" class="section initial-hidden">
+        <h2 class="section-title" data-translate="contact_title">📞 تواصل معي (Let's Connect)</h2>
+        <p data-translate="contact_text">متحمس لمناقشة فرص العمل أو استراتيجيات ضمان الجودة.</p>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" data-translate-placeholder="form_name" placeholder="الاسم" required>
+            <input type="email" id="email" name="email" data-translate-placeholder="form_email" placeholder="البريد الإلكتروني" required>
+            <textarea id="message" name="message" data-translate-placeholder="form_message" placeholder="رسالتك..." required></textarea>
+            <button type="submit" class="btn primary-btn" data-translate="form_submit">إرسال الرسالة</button>
+            <p id="form-status"></p>
+        </form>
+        
+        <div class="social-icons contact-social"> 
+            <a id="linkedin-icon-contact" href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a id="github-icon-contact" href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a id="email-icon-contact" href="#" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            <a id="phone-icon-contact" href="#" title="Phone Number"><i class="fas fa-phone"></i></a>
+        </div>
+        
+    </section>
+    <footer>
+        <div id="image-modal" class="modal">
+            <span class="close-btn">&times;</span>
+            
+            <a class="prev" id="modal-prev-btn">&#10094;</a> 
+            <a class="next" id="modal-next-btn">&#10095;</a> 
+            
+            <img class="modal-content" id="modal-image" src="">
+            <div id="modal-caption"></div> 
+        </div>
+
+        <p>&copy; <span id="current-year"></span> <span data-translate="footer_text">| محفظة أعمال [اسمك] - ضمان الجودة بدقة.</span></p>
+
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

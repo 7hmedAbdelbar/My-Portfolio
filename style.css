@@ -665,7 +665,7 @@ nav ul li a {
 
     /* القسم الرئيسي */
     .hero {
-        min-height: 60vh;
+        min-height: 85vh;
         padding: 2rem 5%;
         /* إضافة مسافة علوية لتجنب اختباء المحتوى تحت الهيدر */
         padding-top: 150px; 

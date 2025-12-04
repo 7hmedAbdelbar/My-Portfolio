@@ -333,7 +333,16 @@ const menuToggle = document.getElementById('menu-toggle');
             }, 3000);
         });
     }
-
+   const profileImgElement = document.querySelector('.hero img[src*="profile_img_path"]'); 
+    
+    if (profileImgElement) {
+        profileImgElement.addEventListener('click', function() {
+            // ** مهم جداً: تصفير قائمة الصور **
+            currentGalleryImages = [];
+            currentImageIndex = 0;
+            openModal(this); 
+        });
+    }
     // 🌟🌟🌟 إضافة منطق معرض الصور (Gallery Modal) 🌟🌟🌟
 
     // 1. ربط أزرار التنقل بالدالة changeImage

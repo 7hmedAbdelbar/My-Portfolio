@@ -542,7 +542,9 @@ footer {
 /* الشاشات الصغيرة (Mobile Phones - أقل من 768px) */
 @media (max-width: 767px) {
 
-    
+    .menu-toggle {
+        display: block; 
+    }
     
     /* جعل الهيدر قابلاً للتحريك والتثبيت في الأعلى */
     header {

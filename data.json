@@ -1,7 +1,7 @@
 {
     "global_settings": {
         "profile_img_path": "images/1.jpg",
-        "cv_link": "https://drive.google.com/file/d/1fK8VdKoRQxls4RT3fUiE__VY5VTlqWJm/view?usp=sharing",
+        "cv_link": "your_cv.pdf",
         "linkedin_link": "https://www.linkedin.com/in/7hmed-abdelbar",
         "github_link": "https://github.com/7hmedAbdelbar",
         "email_link": "mailto:7hmedabdelbar@gmail.com",
@@ -142,6 +142,27 @@
             "en_desc": "Tested a web-based car trading platform covering car listing, inventory management, and search/filter features. Performed Functional and Regression testing, validated data accuracy and user flow, and identified critical issues that improved performance and stability before release.",
             "tags": [],
             "link": "https://docs.google.com/spreadsheets/d/14WGPnPBAeZRRUh9l8rEoUGhzW4phs74-_Y-GFXb1kxY/edit?usp=sharing"
+        },
+
+        {
+            "thumbnail": "images/z0.png", 
+            "gallery_images": [ 
+                                "images/z0.png", 
+                                "images/z1.png",
+                                "images/z2.png",
+                                "images/z3.png",
+                                "images/z4.png",
+                                "images/z5.png",
+                                "images/z6.png"
+
+
+         ],
+            "ar_title": "Zaan ERP and POS System",
+            "en_title": "Zaan ERP and POS System",
+            "ar_desc": "  تم تنفيذ اختبارات Functional وIntegration وSystem وRegression بالإضافة إلى اختبارات قبول المستخدم (UAT) على نظام ERP وPOS يعمل عبر الويب لإدارة صالونات الحلاقة، وذلك لضمان سلاسة سير العمل واعتمادية وأداء النظام بشكل مستقر. ",
+            "en_desc": "Performed functional, integration, system, regression, and UAT testing on a web-based ERP & POS system for barbershop management, ensuring smooth workflows and reliable system performance.",
+            "tags": [],
+            "link": "https://zaan-erp.vercel.app/"
         },
 
         {
